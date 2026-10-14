@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuestas de Automatización ODOO</title>
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/league.min.css" id="theme">
+    
+    <style>
+        .reveal h1, .reveal h2, .reveal h3 {
+            text-transform: none;
+            font-weight: bold;
+        }
+        .highlight {
+            color: #42b983; /* Verde para destacar */
+        }
+        .problem-box {
+            background-color: rgba(255, 99, 71, 0.2);
+            padding: 15px;
+            border-left: 5px solid tomato;
+            margin-bottom: 20px;
+            font-size: 0.8em;
+            text-align: left;
+            border-radius: 5px;
+        }
+        .solution-box {
+            background-color: rgba(66, 185, 131, 0.2);
+            padding: 15px;
+            border-left: 5px solid #42b983;
+            margin-bottom: 20px;
+            font-size: 0.8em;
+            text-align: left;
+            border-radius: 5px;
+        }
+        .benefit-box {
+            background-color: rgba(30, 144, 255, 0.2);
+            padding: 15px;
+            border-left: 5px solid dodgerblue;
+            font-size: 0.8em;
+            text-align: left;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Diapositiva 1: Título -->
+            <section>
+                <h2>Propuestas de <span class="highlight">Automatización</span></h2>
+                <h3>ODOO - Implementación Académica</h3>
+                <br>
+                <p><small>Presentado por: <strong>Giuliana</strong></small></p>
+                <p><small><em>Cumplimiento de Meta 3 de Pasantía</em></small></p>
+            </section>
+
+            <!-- Diapositiva 2: IDEA 1 -->
+            <section>
+                <h2>IDEA 1</h2>
+                <h3>Auditor Automático de Plantillas</h3>
+                <p><small>Verificación inteligente de campos obligatorios</small></p>
+                
+                <div class="problem-box">
+                    <strong>⚠️ El Problema:</strong> Revisar manualmente si las plantillas exportadas de ODOO tienen celdas vacías en campos críticos es lento y propenso a errores.
+                </div>
+                <div class="solution-box">
+                    <strong>⚙️ La Solución:</strong> Un script que "audite" el Excel instantáneamente y resalte qué filas exactas están incompletas.
+                </div>
+                <div class="benefit-box">
+                    <strong>🚀 Beneficio:</strong> Filtro de calidad inmediato. Ahorra horas de revisión visual.
+                </div>
+            </section>
+
+            <!-- Diapositiva 3: IDEA 2 -->
+            <section>
+                <h2>IDEA 2</h2>
+                <h3>Generador de Nomenclatura Corta</h3>
+                <p><small>Asignaturas: 27 caracteres sin tildes</small></p>
+                
+                <div class="problem-box">
+                    <strong>⚠️ El Problema:</strong> Contar letras y borrar caracteres especiales a mano para cumplir la regla del sistema exige mucho tiempo.
+                </div>
+                <div class="solution-box">
+                    <strong>⚙️ La Solución:</strong> Algoritmo que recibe el nombre largo, quita acentos y lo abrevia inteligentemente a 27 caracteres exactos.
+                </div>
+                <div class="benefit-box">
+                    <strong>🚀 Beneficio:</strong> Cero errores de sintaxis y estandarización perfecta de la base de datos en segundos.
+                </div>
+            </section>
+
+            <!-- Diapositiva 4: IDEA 3 -->
+            <section>
+                <h2>IDEA 3</h2>
+                <h3>Validador de Cambios Curriculares</h3>
+                <p><small>Plantilla ODOO vs Malla Oficial</small></p>
+                
+                <div class="problem-box">
+                    <strong>⚠️ El Problema:</strong> El cruce visual para asegurar que ODOO coincida con la malla oficial aprobada es agotador.
+                </div>
+                <div class="solution-box">
+                    <strong>⚙️ La Solución:</strong> Automatización que carga ambos documentos y encuentra discrepancias automáticamente (créditos distintos, nombres cambiados).
+                </div>
+                <div class="benefit-box">
+                    <strong>🚀 Beneficio:</strong> Escudo de seguridad para los procesos de acreditación.
+                </div>
+            </section>
+
+            <!-- Diapositiva 5: Cierre -->
+            <section>
+                <h2>Conclusión</h2>
+                <p>Las 3 opciones están diseñadas para aportar <span class="highlight">Escalabilidad</span> usando programación intermedia.</p>
+                <br>
+                <h4>¿Cuál resuelve el cuello de botella más urgente?</h4>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            transition: 'slide'
+        });
+    </script>
+</body>
+</html>
