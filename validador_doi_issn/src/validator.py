@@ -32,7 +32,7 @@ class SimilarityEngine:
         text = re.sub(r'\s+', ' ', text)
         return text.strip()
 
-    async def compare_titles_async(self, title1: str, title2: str, threshold: float = 0.65) -> dict:
+    async def compare_titles_async(self, title1: str, title2: str, threshold: float = 0.95) -> dict:
         if not title1 or not title2:
             return {"coincide": "No", "similitud": 0.0, "observaciones": "Uno de los títulos está en blanco."}
             
@@ -83,7 +83,7 @@ class PublicationValidator:
     """
     Main Orchestrator for validating DOIs and ISSNs using Mathematical Similarity (No AI).
     """
-    def __init__(self, fetcher: MetadataFetcher = None, threshold: float = 0.65):
+    def __init__(self, fetcher: MetadataFetcher = None, threshold: float = 0.95):
         self.fetcher = fetcher or MetadataFetcher()
         self.engine = SimilarityEngine()
         self.threshold = threshold
@@ -106,13 +106,14 @@ class PublicationValidator:
             if len(partes) > 1 and (partes[1].strip().startswith("10.") or re.match(r'^\d', partes[1].strip())):
                 cleaned = partes[1].strip()
                 
-        cleaned = re.sub(r'[^a-zA-Z0-9.\-/:_;()]', '', cleaned)
+        # Permitir caracteres especiales válidos en DOIs antiguos (SICI) como <, >, [, ], +, =
+        cleaned = re.sub(r'[^a-zA-Z0-9.\-/:_;()<>[\]+=]', '', cleaned)
         return cleaned
 
     def _is_valid_doi_format(self, doi: str) -> bool:
         if not doi:
             return False
-        return bool(re.match(r'^10\.\d{4,9}/[-._;()/:A-Z0-9]+$', doi, re.IGNORECASE))
+        return bool(re.match(r'^10\.\d{4,9}/[-._;()/:A-Z0-9<>[\]+=]+$', doi, re.IGNORECASE))
         
     def _is_valid_issn_format(self, issn: str) -> bool:
         if not issn:

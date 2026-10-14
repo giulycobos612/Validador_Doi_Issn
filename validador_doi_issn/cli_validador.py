@@ -83,13 +83,13 @@ async def main():
     print("\nConsultando Bases de Datos Oficiales y Calculando Similitud (Procesamiento Paralelo)...")
     print("Por favor, espera unos segundos...\n")
     
-    validador = PublicationValidator(threshold=0.65)
+    validador = PublicationValidator(threshold=0.95)
     
     # Validar ambos lotes en paralelo
     report_doi = await validador.validate_batch(registros_doi)
     
     # Para la segunda llamada, creamos un nuevo validador para renovar la sesión HTTP
-    validador_issn = PublicationValidator(threshold=0.65)
+    validador_issn = PublicationValidator(threshold=0.95)
     report_issn = await validador_issn.validate_batch(registros_issn)
     
     resultados_doi = report_doi.resultados
